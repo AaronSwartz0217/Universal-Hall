@@ -1,0 +1,61 @@
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.vcxproj.filters
+*.sln.docstates
+*.suo
+
+# Build outputs
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+build/
+out/
+
+# Compiled binaries
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
+*.exp
+*.idb
+*.ipdb
+*.iobj
+
+# Build logs
+*.log
+*.tlog
+*.lastbuildstate
+
+# NVIDIA DLSS / Streamline binaries (not redistributable)
+nvngx_dlss.dll
+nvngx_dlssg.dll
+dlssg.dll
+sl.*.dll
+
+# Agility SDK
+D3D12Core.dll
+d3d12SDKLayers.dll
+
+# HLSL compiled shaders
+*.cso
+*.dxo
+
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*~
+
+# Local reference docs (not for repo)
+配图参考.docx
+
+# IDE
+.idea/
+.vscode/
+*.opendb
