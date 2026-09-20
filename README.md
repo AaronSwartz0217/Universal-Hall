@@ -181,6 +181,18 @@ msbuild Universal-Hall.sln /p:Configuration=Release
 
 ---
 
+## 10. 参考与致谢
+
+本项目在开发过程中参考了以下开源项目与教学资源，在此致以诚挚谢意。所有参考内容仅用于学习算法思路与接口约定，本项目的核心代码（PresetManager、热切换协议、风格预设、AB 对比等）均为独立实现。
+
+| 项目 | 说明 |
+|------|------|
+| [Microsoft DirectX-Graphics-Samples](https://github.com/microsoft/DirectX-Graphics-Samples) | D3D12 API 层参考。设备初始化、交换链、上传堆、CBV/根参数、HDR 交换链与 tonemap、全屏四边形后处理 pass 等实现思路均参考其中 D3D12HelloTriangle、D3D12HelloTexture、D3D12HelloConstBuffers、D3D12HDR、D3D12Fullscreen 示例。遵循 MSPL 许可，原始版权声明归 Microsoft 所有。 |
+| [NVIDIA Streamline](https://github.com/NVIDIAGameWorks/Streamline) | DLSS 接入层参考。`sl::init`、`sl::beginFrame/endFrame`、`sl::evaluateFeature` 的调用顺序，以及深度、运动向量、色彩缓冲的 tag 绑定方式均参考其官方文档与 D3D12 示例。框架层开源；DLSS 二进制（`nvngx_dlss.dll`、`dlssg.dll`）不随本仓库分发，需从 NVIDIA 官方渠道获取。 |
+| [LearnOpenGL](https://learnopengl.com) | 算法层参考。Framebuffers、Deferred Shading（GBuffer 布局与第二遍光照 pass）、Shadows（PCF、shadow bias）、Cascade Shadow Maps、PBR 与 Lighting Theory 等章节为本项目的管线设计提供了算法思路。HLSL 着色器为自行编写，未直接复制其 GLSL 代码。 |
+
+---
+
 ## License
 
 MIT License
