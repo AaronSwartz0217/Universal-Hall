@@ -37,6 +37,18 @@
 4. **后处理阶段**：色调映射、曝光补偿、LUT 校色等；
 5. **超分/重建阶段**：通过 DLSS 进行超分辨率、帧生成与神经重建。
 
+下图展示了 Direct3D 12 图形管线的完整数据流，从输入装配到像素着色器的全流程：
+
+![Direct3D 12 图形管线示意图](docs/images/d3d12-pipeline.png)
+
+GBuffer 阶段将场景信息编码到多个渲染目标中，各通道可视化效果如下：
+
+![GBuffer 布局可视化](docs/images/gbuffer-visualization.png)
+
+GBuffer 渲染流程如下，包含法线、高光/运动向量、Albedo/阴影、深度缓冲等通道的写入，以及最终的延迟光照 Pass：
+
+![GBuffer 渲染流程图](docs/images/gbuffer-flow.png)
+
 ### 2.2 参数化风格层
 
 风格相关参数以 JSON 预设形式组织，由 PresetManager 统一加载与切换。参数类别包括：
@@ -62,6 +74,18 @@
 
 内部缩放比支持多档可调，用于对比不同分辨率下的画质表现。
 
+DLSS 通过超采样、时间反馈与卷积自编码器，将低分辨率输入重建为接近原生画质的输出：
+
+![DLSS 工作原理图](docs/images/dlss-principle.png)
+
+DLSS 端到端流程如下，以低分辨率渲染配合 AI 超分输出高分辨率画面：
+
+![DLSS 完整流程图](docs/images/dlss-flow.png)
+
+Streamline 作为中间框架，将游戏渲染管线与各厂商的超分/插帧插件解耦，本项目通过其接入 DLSS：
+
+![Streamline 框架架构图](docs/images/streamline-architecture.png)
+
 ### 2.4 对比验证机制
 
 系统提供 AB 分屏对比模式，在同一机位、同一几何、同一 shader 条件下，左右分屏展示不同预设的渲染结果，以直观验证风格切换的效果。
@@ -80,6 +104,10 @@
 | 用户界面 | ImGui |
 | 场景 | 程序化生成的室内场景 |
 | 参数管理 | JSON 热加载 + PresetManager |
+
+阴影采用级联阴影映射（CSM），通过多层级联覆盖不同距离范围，兼顾近距离精度与远距离覆盖：
+
+![CSM 级联阴影原理图](docs/images/csm-shadows.png)
 
 ---
 
