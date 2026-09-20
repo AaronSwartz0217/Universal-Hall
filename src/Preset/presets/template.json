@@ -1,0 +1,35 @@
+{
+  "name": "preset_template",
+  "display_name": "预设模板",
+  "version": 1,
+  "lighting": {
+    "ambient_color": [0.2, 0.2, 0.25],
+    "ambient_intensity": 0.3,
+    "directional_light": {
+      "color_temperature_kelvin": 6500,
+      "intensity": 3.0,
+      "direction": [0.5, -0.8, 0.3]
+    }
+  },
+  "material": {
+    "albedo_texture_set": "default",
+    "roughness_multiplier": 1.0,
+    "roughness_clamp_min": 0.0,
+    "metallic_override": -1.0
+  },
+  "post_process": {
+    "exposure_compensation": 0.0,
+    "lut_texture": "",
+    "lut_intensity": 1.0,
+    "tone_mapper": "ACES"
+  },
+  "dlss": {
+    "internal_resolution_scale": 1.0,
+    "enable_sr": false,
+    "enable_fg": false,
+    "enable_nr": false,
+    "nr_structure_strength": 0.5,
+    "nr_tone_strength": 0.5,
+    "nr_execution_order": "after_sr"
+  }
+}
