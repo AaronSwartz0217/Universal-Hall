@@ -230,4 +230,10 @@ msbuild Universal-Hall.sln /p:Configuration=Release
 
 ## License
 
-MIT License
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPLv3)**.
+
+See [LICENSE](LICENSE) for the full license text.
+
+### Third-party notices
+
+This project includes code originally licensed under the MIT License. The original copyright notice and MIT license text are retained in [LICENSE-MIT](LICENSE-MIT) or in the relevant source files.
