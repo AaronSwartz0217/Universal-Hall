@@ -2,6 +2,13 @@
 
 > 本科毕业设计 · 基于 D3D12 延迟渲染管线的参数化写实风格切换系统
 
+| 项目 | 信息 |
+|------|------|
+| 学校 | 南通大学杏林学院 |
+| 专业 | 计算机科学与技术 |
+| 学生 | 李东盛 |
+| 指导教师 | 陈晓勇 |
+
 ---
 
 ## 1. 项目概述
@@ -223,4 +230,10 @@ msbuild Universal-Hall.sln /p:Configuration=Release
 
 ## License
 
-MIT License
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPLv3)**.
+
+See [LICENSE](LICENSE) for the full license text.
+
+### Third-party notices
+
+This project includes code originally licensed under the MIT License. The original copyright notice and MIT license text are retained in [LICENSE-MIT](LICENSE-MIT) or in the relevant source files.
